@@ -1,118 +1,119 @@
-// @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const lightCodeTheme = require("prism-react-renderer/themes/github");
+const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
-/** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
-  url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  title: "周盛道",
+  tagline: "周盛道的个人站点",
+  url: "https://zhoushengdao.github.io",
+  baseUrl: "/",
+  onBrokenLinks: "log",
+  onBrokenMarkdownLinks: "log",
+  favicon: "favicon.ico",
+  organizationName: "zhoushengdao", // Usually your GitHub org/user name.
+  projectName: "zhoushengdao.github.io", // Usually your repo name.
 
   presets: [
     [
-      'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
+      "classic",
+      {
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          sidebarPath: require.resolve("./sidebars.js"),
+          editUrl: ({ docPath }) =>
+            `https://gitee.com/zhoushengdao/site-docs/edit/main/${docPath}`,
+          exclude: ["template.md", "**/template.md"],
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: ({ docPath }) =>
+            `https://gitee.com/zhoushengdao/site-blog/edit/main/${docPath}`,
+          exclude: ["template.md", "**/template.md"],
         },
-        theme: {
-          customCss: require.resolve('./src/css/custom.css'),
-        },
-      }),
+      },
     ],
   ],
 
-  themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
-      navbar: {
-        title: 'My Site',
-        logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+  themeConfig: {
+    navbar: {
+      title: "周盛道",
+      //   logo: {
+      //     alt: "My Site Logo",
+      //     src: "img/logo.svg",
+      //   },
+      items: [
+        { to: "/blog", label: "博客", position: "left" },
+        {
+          type: "doc",
+          docId: "index",
+          position: "left",
+          label: "文章",
         },
-        items: [
+        {
+          href: "https://github.com/zhoushengdao/zhoushengdao.githu.io/",
+          label: "GitHub",
+          position: "right",
+        },
+      ],
+    },
+    footer: {
+      style: "dark",
+      links: [
+        {
+          title: "工作",
+          items: [
+            {
+              label: "GitHub",
+              href: "https://github.com/zhoushengdao",
+            },
+          ],
+        },
+        {
+          title: "业余时间",
+          items: [
+            {
+              label: "博客",
+              to: "/blog",
+            },
+            {
+              label: "文章",
+              to: "/docs",
+            },
+          ],
+        },
+      ],
+      copyright: `Copyright © ${new Date().getFullYear()} 周盛道. Built with Docusaurus.`,
+    },
+    prism: {
+      theme: lightCodeTheme,
+      darkTheme: darkCodeTheme,
+    },
+    autoCollapseSidebarCategories: true,
+  },
+  plugins: [
+    [
+      "@docusaurus/plugin-pwa",
+      {
+        debug: false,
+        offlineModeActivationStrategies: ["always"],
+        pwaHead: [
           {
-            type: 'doc',
-            docId: 'intro',
-            position: 'left',
-            label: 'Tutorial',
+            tagName: "link",
+            rel: "icon",
+            href: "/favicon.ico",
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
-            position: 'right',
+            tagName: "link",
+            rel: "manifest",
+            href: "/manifest.json",
           },
         ],
+        injectManifestConfig: {
+          globIgnores: ["docs/**", "blog/tags/**"],
+        },
       },
-      footer: {
-        style: 'dark',
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
-      },
-      prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
-      },
-    }),
+    ],
+  ],
 };
 
 module.exports = config;
