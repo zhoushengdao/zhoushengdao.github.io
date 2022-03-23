@@ -25,9 +25,9 @@ jobs:
           cache: pnpm
 
       - name: Setup NPM
-        run:
-          - npm config set registry https://registry.npmmirror.com
-          - npm install -g pnpm
+        run: |
+          npm config set registry https://registry.npmmirror.com
+          npm install -g pnpm
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
