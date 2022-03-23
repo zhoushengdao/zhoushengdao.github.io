@@ -26,8 +26,8 @@ const config = {
         },
         blog: {
           showReadingTime: true,
-          editUrl: ({ blogDirPath, blogPath }) =>
-            `https://gitee.com/zhoushengdao/site-blog/edit/main/${blogDirPath}/${blogPath}`,
+          editUrl: ({ blogPath }) =>
+            `https://gitee.com/zhoushengdao/site-blog/edit/main/${blogPath}`,
           exclude: ["template.md", "**/template.md"],
         },
       },
