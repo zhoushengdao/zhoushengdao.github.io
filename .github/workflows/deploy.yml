@@ -18,18 +18,21 @@ jobs:
         with:
           submodules: true
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@646cdf48217256a3d0b80361c5a50727664284f2
+        with:
+          version: 6.32.3
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 17.x
-
-      - name: Setup NPM
-        run: |
-          npm config set registry https://registry.npmmirror.com
-          npm install -g pnpm
+          cache: "pnpm"
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: |
+          npm config set registry https://registry.npmmirror.com
+          pnpm install --frozen-lockfile
 
       - name: Build website
         run: pnpm run build
