@@ -50,18 +50,22 @@ const config = {
           label: "文章",
         },
         {
-          href: "https://github.com/zhoushengdao/zhoushengdao.githu.io/",
+          href: "https://github.com/zhoushengdao/",
           label: "GitHub",
           position: "right",
         },
       ],
     },
     footer: {
-      style: "dark",
+      style: "light",
       links: [
         {
           title: "工作",
           items: [
+            {
+              label: "博客",
+              to: "/blog",
+            },
             {
               label: "GitHub",
               href: "https://github.com/zhoushengdao",
@@ -71,10 +75,6 @@ const config = {
         {
           title: "业余时间",
           items: [
-            {
-              label: "博客",
-              to: "/blog",
-            },
             {
               label: "文章",
               to: "/docs",
