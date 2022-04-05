@@ -1,0 +1,22 @@
+{
+  "background_color": "#f5f6f7",
+  "description": "周盛道的个人站点",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "周盛道",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "周盛道",
+  "start_url": "/",
+  "theme_color": "#3578e5",
+  "lang": "zh-CN",
+  "categories": [],
+  "screenshots": [],
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "type": "image/x-icon"
+    }
+  ],
+  "shortcuts": []
+}
