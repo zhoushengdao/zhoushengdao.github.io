@@ -15,8 +15,11 @@ jobs:
     steps:
       - name: Clone the repo
         uses: actions/checkout@v2
-        with:
-          submodules: true
+
+      - name: Clone the data repo
+        run: |
+          git clone https://jihulab.com/zhoushengdao.github.io/blog.git
+          git clone https://jihulab.com/zhoushengdao.github.io/docs.git
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2.2.1
