@@ -1,6 +1,0 @@
-[submodule "blog"]
-	path = blog
-	url = https://gitee.com/zhoushengdao/site-blog.git
-[submodule "docs"]
-	path = docs
-	url = https://gitee.com/zhoushengdao/site-docs.git
