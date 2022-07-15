@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkzhoushengdao_github_io=self.webpackChunkzhoushengdao_github_io||[]).push([[453],{8605:function(e){e.exports=JSON.parse('{"allTagsPath":"/blog/tags","name":"hello","count":2,"permalink":"/blog/tags/hello"}')}}]);
