@@ -1,8 +1,7 @@
-// Note: type annotations allow type checking and IDEs autocompletion
-
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
+/** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "周盛道",
   tagline: "周盛道的个人站点",
@@ -11,8 +10,8 @@ const config = {
   onBrokenLinks: "log",
   onBrokenMarkdownLinks: "log",
   favicon: "favicon.ico",
-  organizationName: "zhoushengdao", // Usually your GitHub org/user name.
-  projectName: "zhoushengdao.github.io", // Usually your repo name.
+  organizationName: "zhoushengdao",
+  projectName: "zhoushengdao.github.io",
 
   presets: [
     [
@@ -21,26 +20,34 @@ const config = {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           editUrl: ({ docPath }) =>
-            `https://gitee.com/zhoushengdao/site-docs/edit/main/${docPath}`,
-          exclude: ["template.md", "**/template.md"],
+            `https://jihulab.com/zhoushengdao.github.io/docs/-/edit/main/${docPath}`,
         },
         blog: {
           showReadingTime: true,
           editUrl: ({ blogPath }) =>
-            `https://gitee.com/zhoushengdao/site-blog/edit/main/${blogPath}`,
-          exclude: ["template.md", "**/template.md"],
+            `https://jihulab.com/zhoushengdao.github.io/blog/-/edit/main/${blogPath}`,
         },
       },
     ],
   ],
 
   themeConfig: {
+    colorMode: {
+      respectPrefersColorScheme: true,
+    },
+    docs: {
+      sidebar: {
+        hideable: true,
+        autoCollapseCategories: true,
+      },
+    },
     navbar: {
       title: "周盛道",
       //   logo: {
       //     alt: "My Site Logo",
       //     src: "img/logo.svg",
       //   },
+      hideOnScroll: true,
       items: [
         { to: "/blog", label: "博客", position: "left" },
         {
@@ -50,6 +57,10 @@ const config = {
           label: "文章",
         },
         {
+          type: "search",
+          position: "right",
+        },
+        {
           href: "https://github.com/zhoushengdao/",
           label: "GitHub",
           position: "right",
@@ -57,7 +68,6 @@ const config = {
       ],
     },
     footer: {
-      style: "light",
       links: [
         {
           title: "工作",
@@ -88,12 +98,26 @@ const config = {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
     },
-    docs: {
-      sidebar: {
-        autoCollapseCategories: true,
-      },
+    tableOfContents: {
+      minHeadingLevel: 2,
+      maxHeadingLevel: 6,
     },
   },
+  i18n: {
+    defaultLocale: "zh",
+    locales: ["zh"],
+  },
+  themes: [
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      {
+        hashed: true,
+        language: ["en", "zh"],
+        indexPages: true,
+        highlightSearchTermsOnTargetPage: true,
+      },
+    ],
+  ],
   plugins: [
     [
       "@docusaurus/plugin-pwa",
