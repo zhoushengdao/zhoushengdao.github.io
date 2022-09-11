@@ -22,7 +22,7 @@ jobs:
           git clone https://jihulab.com/zhoushengdao.github.io/docs.git
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v2.2.2
+        uses: pnpm/action-setup@v2
         with:
           version: latest
 
