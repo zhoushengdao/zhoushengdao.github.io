@@ -20,7 +20,6 @@ jobs:
         run: |
           git clone https://jihulab.com/zhoushengdao.github.io/blog.git
           git clone https://jihulab.com/zhoushengdao.github.io/docs.git
-
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
@@ -35,7 +34,6 @@ jobs:
       - name: Install dependencies
         run: |
           npm config set registry https://registry.npmmirror.com
-          pnpm install --frozen-lockfile
-
+          pnpm install
       - name: Build website
         run: pnpm run build
