@@ -40,15 +40,6 @@ jobs:
       - name: Build website
         run: pnpm run build
 
-      - name: Commit pnpm-lock.yaml
-        run: |
-          git status
-          git config --global user.email "zhoushengdao@sina.cn"
-          git config --global user.name "周盛道"
-          git add pnpm-lock.yaml
-          git commit -m "update pnpm-lock.yaml"
-          git push --force origin HEAD:$GITHUB_REF
-
       - name: Archive artifact
         shell: sh
         run: |
