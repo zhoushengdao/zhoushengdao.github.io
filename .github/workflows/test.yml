@@ -37,20 +37,17 @@ jobs:
           npm config set registry https://registry.npmmirror.com
           pnpm install --no-frozen-lockfile
 
-      - name: Extract branch name
-        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-        id: extract_branch
-
       - name: Build website
         run: pnpm run build
 
       - name: Commit pnpm-lock.yaml
         run: |
-          git config --global user.email "zhoushengdao@sina.cn"
-          git config --global user.name "周盛道"
-          git add pnpm-lock.yaml
-          git commit -m "update pnpm-lock.yaml"
-          git push
+          git status
+        # git config --global user.email "zhoushengdao@sina.cn"
+        # git config --global user.name "周盛道"
+        # git add pnpm-lock.yaml
+        # git commit -m "update pnpm-lock.yaml"
+        # git push
 
       - name: Archive artifact
         shell: sh
