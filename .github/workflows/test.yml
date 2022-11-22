@@ -43,12 +43,12 @@ jobs:
       - name: Commit pnpm-lock.yaml
         run: |
           git status
-          echo $GITHUB_REF_NAME
-        # git config --global user.email "zhoushengdao@sina.cn"
-        # git config --global user.name "周盛道"
-        # git add pnpm-lock.yaml
-        # git commit -m "update pnpm-lock.yaml"
-        # git push origin $GITHUB_REF_NAME
+        # echo $GITHUB_REF_NAME
+          git config --global user.email "zhoushengdao@sina.cn"
+          git config --global user.name "周盛道"
+          git add pnpm-lock.yaml
+          git commit -m "update pnpm-lock.yaml"
+          git push origin $GITHUB_REF_NAME
 
       - name: Archive artifact
         shell: sh
