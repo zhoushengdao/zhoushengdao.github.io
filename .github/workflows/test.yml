@@ -44,8 +44,8 @@ jobs:
         run: |
           git config --global user.email "zhoushengdao@sina.cn"
           git config --global user.name "周盛道"
-          git config --global core.autocrlf true
           git add pnpm-lock.yaml
+          git diff
           git commit -m "update pnpm-lock.yaml"
           git push
 
