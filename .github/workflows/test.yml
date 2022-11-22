@@ -35,7 +35,7 @@ jobs:
       - name: Install dependencies
         run: |
           npm config set registry https://registry.npmmirror.com
-          pnpm install --no-frozen-lockfile
+          pnpm install --frozen-lockfile=false
 
       - name: Build website
         run: pnpm run build
