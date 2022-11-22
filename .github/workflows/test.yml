@@ -47,7 +47,7 @@ jobs:
           git config --global user.name "周盛道"
           git add pnpm-lock.yaml
           git commit -m "update pnpm-lock.yaml"
-          git push origin $GITHUB_REF_NAME
+          git push origin HEAD:$GITHUB_REF
 
       - name: Archive artifact
         shell: sh
