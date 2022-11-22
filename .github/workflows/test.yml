@@ -36,7 +36,9 @@ jobs:
         run: |
           npm config set registry https://registry.npmmirror.com
           pnpm install --no-frozen-lockfile
-          pnpm install --lockfile-only
+          cat pnpm-lock.yaml
+        # pnpm install --lockfile-only
+        # cat pnpm-lock.yaml
 
       - name: Build website
         run: pnpm run build
@@ -44,11 +46,11 @@ jobs:
       - name: Commit pnpm-lock.yaml
         run: |
           git diff
-        # git config --global user.email "zhoushengdao@sina.cn"
-        # git config --global user.name "周盛道"
-        # git add pnpm-lock.yaml
-        # git commit -m "update pnpm-lock.yaml"
-        # git push
+          git config --global user.email "zhoushengdao@sina.cn"
+          git config --global user.name "周盛道"
+          git add pnpm-lock.yaml
+          git commit -m "update pnpm-lock.yaml"
+          git push
 
       - name: Archive artifact
         shell: sh
