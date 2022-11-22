@@ -37,6 +37,10 @@ jobs:
           npm config set registry https://registry.npmmirror.com
           pnpm install --no-frozen-lockfile
 
+      - name: Extract branch name
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
+
       - name: Build website
         run: pnpm run build
 
