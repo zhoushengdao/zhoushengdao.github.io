@@ -37,5 +37,20 @@ jobs:
           npm config set registry https://registry.npmmirror.com
           pnpm install --no-frozen-lockfile
 
+      - name: Commit pnpm-lock.yaml
+        run: |
+          git config --global user.email "zhoushengdao@sina.cn"
+          git config --global user.name "周盛道"
+          git config --global core.autocrlf true
+          git add pnpm-lock.yaml
+          git commit -m "update pnpm-lock.yaml"
+          git push
+
       - name: Build website
         run: pnpm run build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          name: "build-artifact"
+          path: "./build"

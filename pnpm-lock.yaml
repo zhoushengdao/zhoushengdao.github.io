@@ -8,7 +8,7 @@ specifiers:
   '@docusaurus/preset-classic': ^2.2.0
   '@docusaurus/theme-common': ^2.2.0
   '@docusaurus/types': ^2.2.0
-  '@easyops-cn/docusaurus-search-local': ^0.32.0
+  '@easyops-cn/docusaurus-search-local': ^0.33.5
   '@mdx-js/react': ^1.6.22
   '@types/react': ^18.0.25
   prism-react-renderer: ^1.3.5
@@ -23,7 +23,7 @@ dependencies:
   '@docusaurus/plugin-pwa': 2.2.0_56jbash75ng5psbctf36wqywr4
   '@docusaurus/preset-classic': 2.2.0_qealvalg3qigqrjomgx4rnwdxu
   '@docusaurus/theme-common': 2.2.0_ehuab5y7qm7umqkczzguzxp57i
-  '@easyops-cn/docusaurus-search-local': 0.32.0_bnj6qmci2tm4ysigvg3xfm7z2y
+  '@easyops-cn/docusaurus-search-local': 0.33.5_bnj6qmci2tm4ysigvg3xfm7z2y
   '@mdx-js/react': 1.6.22_react@17.0.2
   prism-react-renderer: 1.3.5_react@17.0.2
   react: 17.0.2
@@ -2465,8 +2465,8 @@ packages:
       immediate: 3.3.0
     dev: false
 
-  /@easyops-cn/docusaurus-search-local/0.32.0_bnj6qmci2tm4ysigvg3xfm7z2y:
-    resolution: {integrity: sha512-WB5695Rez9q8DbP9h89JyWo0U1Th1vA1R0dytJD/77M7Xxb/pFFwG5SCd0uzHF/ban0bmsTa96MxWYeDXwQzYA==}
+  /@easyops-cn/docusaurus-search-local/0.33.5_bnj6qmci2tm4ysigvg3xfm7z2y:
+    resolution: {integrity: sha512-9juHGVUy6N37Ezg1Msz1paMqT3zrQIlRLNJVw/NTG3aSctaYw1W0zAIRieXgBKvBAPkcCn95GsUrcziH13Grsw==}
     engines: {node: '>=12'}
     peerDependencies:
       '@docusaurus/theme-common': ^2.0.0-rc.1
