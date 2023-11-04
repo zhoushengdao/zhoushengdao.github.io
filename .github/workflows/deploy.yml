@@ -30,11 +30,6 @@ jobs:
       - name: Clone the repo
         uses: actions/checkout@v3
 
-      - name: Clone the data repo
-        run: |
-          git clone https://jihulab.com/zhoushengdao.github.io/blog.git
-          git clone https://jihulab.com/zhoushengdao.github.io/docs.git
-
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
