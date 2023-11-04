@@ -19,12 +19,12 @@ const config = {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           editUrl: ({ docPath }) =>
-            `https://jihulab.com/zhoushengdao.github.io/docs/-/edit/main/${docPath}`,
+            `https://jihulab.com/zhoushengdao/zhoushengdao.github.io/-/edit/main/blog/${docPath}?ref_type=heads`,
         },
         blog: {
           showReadingTime: true,
           editUrl: ({ blogPath }) =>
-            `https://jihulab.com/zhoushengdao.github.io/blog/-/edit/main/${blogPath}`,
+            `https://jihulab.com/zhoushengdao/zhoushengdao.github.io/-/edit/main/blog/${blogPath}?ref_type=heads`,
         },
       },
     ],
@@ -91,7 +91,7 @@ const config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} 周盛道。Built with Docusaurus.`,
+      copyright: `版权所有 © ${new Date().getFullYear()} 周盛道。使用 Docusaurus 构建。`,
     },
     prism: {
       theme: themes.github,
