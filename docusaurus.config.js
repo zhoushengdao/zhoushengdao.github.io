@@ -19,7 +19,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           editUrl: ({ docPath }) =>
-            `https://jihulab.com/zhoushengdao/zhoushengdao.github.io/-/edit/main/blog/${docPath}?ref_type=heads`,
+            `https://jihulab.com/zhoushengdao/zhoushengdao.github.io/-/edit/main/docs/${docPath}?ref_type=heads`,
         },
         blog: {
           showReadingTime: true,
